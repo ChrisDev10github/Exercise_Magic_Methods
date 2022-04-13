@@ -7,16 +7,13 @@ class Astronaut:
         self.status = status
 
     def __gt__(self,other):
-        if self.flight > other.flight:
-            return self.flight > other.flight
+        return self.flight > other.flight
     
     def __eq__(self,other):
-        if self.flight == other.flight:
-            return self.flight == other.flight
+        return self.flight == other.flight
     
     def __ge__(self,other):
-        if self.flight >= other.flight:
-            return self.flight >= other.flight
+        return self.flight >= other.flight
 
     def __str__(self):
         return f'{self.name}, {self.status}'

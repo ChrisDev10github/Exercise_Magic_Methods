@@ -24,8 +24,27 @@ class Astronaut:
 
 #Part 3
 f=open("astronauts.csv",'r')      
-astronautDictionary = csv.DictRead(f)
+astronautDictionary = csv.DictReader(f)
 dictList = list(astronautDictionary)
 f.close() 
 
-vars(dictList[0])
+peopleList =[]
+for i in range(0,len(dictList)):
+    peopleList.append(Astronaut(dictList[i]["Name"], dictList[i]["Space Flight (hr)"], dictList[i]["Status"]))
+
+print(vars(peopleList[0]))
+
+
+import random
+
+a1 = random.choice(peopleList)
+a2 = random.choice(peopleList)
+print(a1)
+print(a1>a2)
+print(a1=a2)
+print(a1>=a2)
+
+
+
+for i in range(0,len(peopleList)):
+    print(peopleList[i])
